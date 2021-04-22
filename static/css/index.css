@@ -1,0 +1,10 @@
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.card{
+  height: 15%;
+  width: 15%;
+}

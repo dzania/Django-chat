@@ -1,0 +1,7 @@
+.hero {
+  background-image: linear-gradient(to bottom right, #2596be, #f2fcfe);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "mysite/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+<div class="columns is-vcentered is-desktop">
+  <div class="column is-full has-text-centered">
+    <p>Hi {{user.get_username}} what chat room would you like to enter?</p>
+    <div class="column is-full has-text-centered">
+      <div class="field has-addons has-addons-centered">
+          <div class="control">
+            <input
+              id="room-name-input"
+              class="input is-primary is-expanded"
+              type="text"
+              placeholder="Enter chatroom name..."
+              required
+            />
+          </div>
+          <div class="control">
+            <input id="room-name-submit" type="button" class="button is-primary" value="Enter" />
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="{% static '/js/chatroom.js' %}"></script>
+{% endblock %}
