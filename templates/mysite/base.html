@@ -10,47 +10,63 @@
 
   </head>
   <body>
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light has-shadow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="">
-    Chat
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <p class="navbar-item title is-2">
+      Chat
+      </p>
+    <div class="navbar-burger burger" data-target="navmenu" aria-label="menu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
-    </a>
+    </div>
   </div>
+
+  <div class="navbar-menu" id="navmenu">
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
           {% if user.is_authenticated %}
             <p class="navbar-item"> 
               Hi {{user.get_username}}
             </p>
- <a class="button is-link" href="/logout">
-             Log out
-           </a>
+        <div class="field is-grouped">
+          <p class="control">
+            <a href="{% url 'logout' %}">
+            <button class="button is-link">
+              Logout
+            </button>
+            </a>
+          </div>
          {% else  %}
-          <a class="button is-primary" href="/register">
-            Sign up
-          </a>
-          <a class="button is-link" href="/login">
+      <div class="field is-grouped">
+        <p class="control">
+          <a href="{% url 'login' %}">
+          <button class="button is-link">
             Login
+          </button>
           </a>
+        </p>
+        <p class="control">
+          <a href="{% url 'register' %}">
+          <button class="button is-primary">
+            Sign up
+          </button>
+            </a>
+        </p>
+      </div>
           {% endif %}
-        </div>
-        </div>
+    </div>
+  </div>
 </nav>
 <section class="hero is-fullheight">
         <div class="hero-body">
-            <div class="container has-text-centered">
+            <div class="container has-text-centered"> 
     {% block content %}{% endblock content %}
             </div>
             </div>
           </div>
         </div>
     </section>
+  <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
   </body>
 </html>

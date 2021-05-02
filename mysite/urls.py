@@ -17,12 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from register import views as v 
 from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView
+
 
 urlpatterns = [
-    path('chat/',include('chat.urls')),
+    path('chat/',include('chat.urls'),name='chat'),
     path('admin/', admin.site.urls),
     path('register/',v.register, name="register"),
+    path('', v.loginPage, name="login"),
     path('',include("django.contrib.auth.urls")),
-    path('',TemplateView.as_view(template_name="mysite/base.html")),
+
 
 ]

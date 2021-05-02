@@ -38,7 +38,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'chat',
     'channels',
-    'crispy_forms',
     'register.apps.RegisterConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,4 +134,4 @@ CHANNEL_LAYERS = {
     },
 }
 LOGIN_REDIRECT_URL = "/chat"
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = '/login'
