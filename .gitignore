@@ -1,6 +1,6 @@
 .env
-./mysite/__pycache__/
-./register/__pycache__/
-./chat/__pycache__/
-./img/
+mysite/__pycache__/
+register/__pycache__/
+chat/__pycache__/
+img/
 
