@@ -1,6 +1,9 @@
 .env
 mysite/__pycache__/
+<<<<<<< HEAD
 register/__pycache__/
 chat/__pycache__/
+=======
+>>>>>>> 0662958898a6c3052b572aa02c938e82dc5aeb50
 /img
 
