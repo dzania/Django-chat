@@ -8,5 +8,5 @@ python manage.py runserver
 ```
 
 ![login](./img/Login.png)
-![room](./img/Login.png)
+![room](./img/Room.png)
 ![chat](./img/Chat.png)
