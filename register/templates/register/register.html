@@ -1,0 +1,70 @@
+{% extends "mysite/base.html" %} 
+{% block title %}Create an Account{% endblock %}
+{% load static %}
+{% block content %}	
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+<div class="card">
+  <div class="card-content">
+    <form method="POST" class="form-group">
+        {% csrf_token %} 
+
+  <div class="field">
+    <label class="label is-medium">Create new account</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-medium is-success" name="username" type="username" placeholder="Login" required id="id_username">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user fa-xs"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check fa-xs"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-medium is-success" type="Email" name="email" placeholder="Email" required id="id_email">
+      <span class="icon is-left">
+        <i class="fas fa-envelope fa-sm"></i>
+      </span>
+      <span class="icon is-right">
+        <i class="fas fa-check fa-sm"></i>
+      </span>
+      </div>
+  </div>
+
+  <div class="field">
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-medium is-success" type="password" name="password1" placeholder="Password" required id="id_password1">
+      <span class="icon is-left">
+        <i class="fas fa-lock fa-sm"></i>
+      </span>
+      <span class="icon is-right">
+        <i class="fas fa-check fa-sm"></i>
+      </span>
+    </div>
+  </div>
+    <div class="field">
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-medium is-success" type="password" name="password2" placeholder="Password Confirmation" required id="id_password2"> 
+      <span class="icon is-left">
+        <i class="fas fa-lock fa-sm"></i>
+      </span>
+      <span class="icon is-right">
+        <i class="fas fa-check fa-sm"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <p class="control">
+    <button class="button is-primary" type="submit">Submit</button>
+    </p>
+  </div>
+      <p>Already have an account?  Login <a href="/login">here</a></p>
+    </div>
+  </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

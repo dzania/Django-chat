@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CH@T</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://kit.fontawesome.com/09f0d736ac.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar is-light has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <p class="navbar-item title is-2">Chat</p>
+        <div class="navbar-burger burger" data-target="navmenu" aria-label="menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="navbar-menu" id="navmenu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            {% if user.is_authenticated %}
+            <p class="navbar-item">Hi {{user.get_username}}</p>
+          <div class="field is-grouped">
+            <p class="control">
+              <a href="{% url 'logout' %}">
+                <button class="button is-link">Logout</button>
+              </a>
+            </p>
+          </div>
+        </div>
+
+          {% else %}
+          <div class="field is-grouped">
+            <p class="control">
+              <a href="{% url 'login' %}">
+                <button class="button is-link">Login</button>
+              </a>
+            </p>
+            <p class="control">
+              <a href="{% url 'register' %}">
+                <button class="button is-primary">Sign up</button>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </nav>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">{% block content %}{% endblock content %}</div>
+      </div>
+    </section>
+    <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
+  </body>
+</html>
